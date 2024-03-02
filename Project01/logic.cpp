@@ -95,3 +95,19 @@ bool is_the_same(int* vector, int length) {
 
 	return flag;
 }
+
+bool is_the_diffirent(int* vector, int length) {
+	bool flag = true;
+
+	for (int i = 0; i < length - 1; i++)
+	{
+		for (int j = i + 1; j < length; j++)
+		{
+			if (*(vector + i) == *(vector + j)) {
+				flag = false;
+			}
+		}
+	}
+
+	return flag;
+}

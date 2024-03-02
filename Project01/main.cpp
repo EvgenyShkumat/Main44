@@ -15,17 +15,19 @@ double count_without_min_max(int* vector, int length, int min, int max);
 
 bool is_the_same(int* vector, int length);
 
+bool is_the_diffirent(int* vector, int length);
+
 int main() {
 	int size = 5;
 	int* vector = new int[size];
 
 	random_init(vector, size, 0, 9);
 
-	string same = is_the_same(vector, size) ? "There are same elements"
-		: "There is no same elements";
+	string diffirent = is_the_diffirent(vector, size) ? "All elements are diffirent"
+		: "There are some same elements";
 
 	cout << "Vector:\n" << output(vector, size) << endl;
-	cout << same;
+	cout << diffirent;
 
 	return 0;
 }
