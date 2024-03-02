@@ -13,20 +13,19 @@ int max_element(int* vector, int length);
 int sum_without_min_max(int* vector, int length, int min, int max);
 double count_without_min_max(int* vector, int length, int min, int max);
 
+bool is_the_same(int* vector, int length);
+
 int main() {
-	int size = 10;
+	int size = 5;
 	int* vector = new int[size];
 
 	random_init(vector, size, 0, 9);
 
-	int min = min_element(vector, size);
-	int max = max_element(vector, size);
-
-	int sum = sum_without_min_max(vector, size, min, max);
-	int count = count_without_min_max(vector, size, min, max);
+	string same = is_the_same(vector, size) ? "There are same elements"
+		: "There is no same elements";
 
 	cout << "Vector:\n" << output(vector, size) << endl;
-	cout << "Avg arithmetic of elements without min and max: " << arithmetic_avg(sum, count);
+	cout << same;
 
 	return 0;
 }
